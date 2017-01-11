@@ -40,7 +40,9 @@ socket.on('connect', function() {
 
 socket.on('message', function(data) {
     try {
-        console.log(data && data.replace && data.replace('\n', ''));
+        let obj = JSON.parse(data);
+        console.log(obj.msg);
+        //console.log(data && data.replace && data.replace('\n', ''));
     }
     catch (err) {
         console.error(err);
